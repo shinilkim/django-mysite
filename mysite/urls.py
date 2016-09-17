@@ -17,17 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
-from django.views.generic import ListView, DetailView
-
-from bookmark.models import Bookmark
 
 
 urlpatterns = [
     # url(regex, view, kwargs=None, name=None, prefix='')
     url(r'^admin/', include(admin.site.urls)),
 
-    # Class-based views for Bookmark app
-    url(r'^bookmark/$', ListView.as_view(model=Bookmark), name='index'),
-    url(r'^bookmark/(?P<pk>\d+)/$', DetailView.as_view(model=Bookmark), name='detail'),
+    # bookmark
+    url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
+    # blog
+    url(r'^blog/', include('blog.urls', namespace='blog')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
