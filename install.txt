@@ -1,0 +1,30 @@
+1. 프로젝트 생성
+# python django-admin.py startproject mysite
+
+2. settings.py 설정
+- 데이터베이스 설정
+- 템플릿 설정
+- 정작파일 설정(*.js / *.css ..)
+- 타임존 설정
+- 미디어 설정(파일 업로드)
+
+3. DB 생성(django : group, user)
+# python manage.py migrate
+# python createsuperuser => account : admin / admin$0507
+
+4. Application 생성
+# python manage.py startapp bookmark
+# python manage.py startapp blog
+# python manage.py startapp photo
+
+5. Directory 생성
+# templates
+
+6. Programing ...
+
+7. DB sync
+# python manage.py makemigrations
+# python manage.py migrate
+
+8. Server Start
+# python manage.py runserver 0.0.0.0:8000 &
